@@ -1,8 +1,13 @@
+//adding import axios statement
+import axios from 'axios';
+
 /*
   STEP 1: using axios, send a GET request to the following URL
     (replacing the placeholder with your Github name):
     https://api.github.com/users/<your name>
 */
+
+
 
 /*
   STEP 2: Inspect and study the data coming back, this is YOUR
@@ -58,3 +63,41 @@ const followersArray = [];
     luishrd
     bigknell
 */
+
+//declare entry point for cards
+const cardsDiv = document.querySelector('.cards')
+
+// function to create user card divs
+function gitCardMaker(gitDataObj) {
+  const cardDiv = document.createElement('div') // creates main card div
+  const cardImg = document.createElement('img') // Creates image tag for cards
+  const cardInfo = document.createElement('div') // Creates card info div for card info text
+  const usersName = document.createElement('h3') // creates h3 tag for User's name field
+  const gitUserName = document.createElement('p') // creates P tag for git username field
+  const userLocation = document.createElement('p') // creates P tag for user location
+  const userProfile = document.createElement('p') // // creates P tag for user profile link title
+  const userProfileLink = document.createElement('a') // // creates a tag for user profile link 
+  const userFollowers = document.createElement('p') // // creates P tag for followers count
+  const userFollowing = document.createElement('p') // // creates P tag for following count
+  const userBio = document.createElement('p') // // creates P tag for userBio
+
+  //adding elements to carddiv in order of spec
+  cardsDiv.appendChild(cardDiv)
+  cardDiv.appendChild(cardImg)
+  cardDiv.appendChild(cardInfo) 
+  cardInfo.appendChild(usersName)
+  cardInfo.appendChild(gitUserName)
+  cardInfo.appendChild(userLocation)
+  cardInfo.appendChild(userProfile)
+  userProfile.appendChild(userProfileLink)
+  cardInfo.appendChild(userFollowers)
+  cardInfo.appendChild(userFollowing)
+  cardInfo.appendChild(userBio)
+ 
+cardDiv.classList.add('card') // adds card clas to card div
+
+
+return cardsDiv
+}
+
+console.log(cardsDiv)
